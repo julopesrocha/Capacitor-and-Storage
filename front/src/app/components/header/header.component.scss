@@ -1,0 +1,52 @@
+/* HEADER */
+ion-toolbar{
+  --background: #E3D9CF;
+  padding-bottom: 2%;
+}
+
+.toolbar{
+  --background: #E3D9CF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ITENS DO HEADER */
+#searchbar{
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+}
+
+ion-searchbar{
+  padding: 0 2%;
+}
+
+#logo {
+  display: flex;
+  align-items: flex-end;
+  width: 80px;
+  height: 50px;
+}
+
+#logo img{
+  width: inherit;
+  height: auto;
+  margin-right: 0;
+  align-self: flex-end !important;
+}
+
+.slogan{
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  margin-top: 0;
+  color: #717171;
+  font-weight: bold;
+}
+
+.slogan span{
+  color:  #7D0D23;
+  font-weight: bold;
+}
+  
