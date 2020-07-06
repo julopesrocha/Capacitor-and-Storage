@@ -76,6 +76,14 @@ class PassportController extends Controller
         return response()->json(['success'=>$user], $this->successStatus);
       }
 
+      public function auth() {
+        $user=Auth::user();
+        if($user == null) {
+            return response()->json(['user' => $user, 'status' => 401]);
+        }
+        return response()->json(['user' => $user, 'status' => $this->successStatus]);
+      }
+
       public function logout(){
         $accessToken=Auth::user()->token();
         DB::table('oauth_refresh_tokens')->where('access_token_id', $accessToken->id)->update(['revoked'=>true]);

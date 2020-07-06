@@ -12,21 +12,15 @@ export class RepublicGuard implements CanActivate  {
   constructor(private router: Router, public authService: AuthService) {}
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
-    let authInfo = {
-      authenticated: false
-    };
 
     this.authService.auth().subscribe( (res) => {
       console.log(res.status);
-        if(res.status == 200) {
-          authInfo.authenticated = true;
-        }
+      console.log(res.user);
+      if (res.status !== 200) {
+        this.router.navigate(['/login']);
+        return false;
+      }
     });
-
-    if (!authInfo.authenticated) {
-      this.router.navigate(['/login']);
-      return false;
-    }
 
     return true;
   }

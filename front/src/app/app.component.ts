@@ -74,7 +74,6 @@ export class AppComponent {
     this.searchService.getUser(id_user).subscribe( (res) => {
         if(res[0].is_locator){
           this.is_locator = true;
-          let is_locator: string;
           localStorage.setItem('is_locator', 'true');
         }
         else{
