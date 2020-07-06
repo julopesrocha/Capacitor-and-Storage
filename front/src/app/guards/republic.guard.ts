@@ -24,5 +24,4 @@ export class RepublicGuard implements CanActivate  {
 
     return true;
   }
-  
 }
