@@ -6,9 +6,9 @@ import { RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CadastroPageRoutingModule } from './cadastro-routing.module';
+import { RegisterPageRoutingModule } from './register-routing.module';
 
-import { CadastroPage } from './cadastro.page';
+import { RegisterPage } from './register.page';
 
 @NgModule({
   imports: [
@@ -16,10 +16,10 @@ import { CadastroPage } from './cadastro.page';
     ReactiveFormsModule, 
     FormsModule,
     IonicModule,
-    CadastroPageRoutingModule,
+    RegisterPageRoutingModule,
     BrMaskerModule,
     RouterModule
   ],
-  declarations: [CadastroPage]
+  declarations: [RegisterPage]
 })
-export class CadastroPageModule {}
+export class RegisterPageModule {}

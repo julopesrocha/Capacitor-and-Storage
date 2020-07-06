@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { CadastroPageModule } from './cadastro/cadastro.module';
+import { RegisterPageModule } from './register/register.module';
 import { LoginPageModule } from './login/login.module';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';

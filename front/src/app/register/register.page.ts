@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular'; //aviso de cadastro
+import { ToastController } from '@ionic/angular'; //aviso de register
 
 /* INTEGRAÇÃO */
 import { ActivatedRoute } from '@angular/router';
 import { RegisterService } from '../services/register.service';
 
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.page.html',
-  styleUrls: ['./cadastro.page.scss'],
+  selector: 'app-register',
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
 })
-export class CadastroPage implements OnInit {
+export class RegisterPage implements OnInit {
 
   registerForm: FormGroup; //FormGroup é o nome do formulário
   public passwordError: boolean;
@@ -33,7 +33,7 @@ export class CadastroPage implements OnInit {
   ngOnInit() {
   }
 
-  //Função que é chamada ao submeter o formulário e enviar dados para cadastro no back
+  //Função que é chamada ao submeter o formulário e enviar dados para register no back
   async submitForm(form){
 
     //Toast de erro
@@ -89,7 +89,4 @@ export class CadastroPage implements OnInit {
   unsetInputPhone(){
     this.inputPhone = false;
   }
-
-
-
 }

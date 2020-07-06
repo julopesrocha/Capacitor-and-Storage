@@ -19,10 +19,12 @@ export class CatalogPage implements OnInit {
   public republicsArray: object[] = []
 
   ngOnInit() {
-    if(localStorage.getItem('token') == 'null'){
+    if (localStorage.getItem('token') == 'null'){
       this.auth = false;
     }
-    else this.auth = true;
+    else {
+      this.auth = true;
+    }
     this.searchService.getRepublics().subscribe( (res) => {
       console.log(res);
       res.republics.forEach(element => {
