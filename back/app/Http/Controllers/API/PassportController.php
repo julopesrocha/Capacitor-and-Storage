@@ -18,23 +18,20 @@ class PassportController extends Controller
   public $successStatus = 200;
 
       public function registerUser(Request $request){
-      $validator=Validator::make($request->all(),[
-          'name' => 'required',
-          'email' => 'required|email|unique:Users,email',
-          'password' => 'required'
-        ]);
-      if ($validator ->fails()){
-        return  response()->json(['error' => $validator->errors(), 'status' => 401]);
-      }
-      $newuser=new User;
-      $newuser->createUser($request);
-      $newuser->notify(new confirmacaoCadastro($newuser));
+        $validator=Validator::make($request->all(),[
+            'name' => 'required',
+            'email' => 'required|email|unique:Users,email',
+            'password' => 'required'
+            ]);
+        if ($validator ->fails()){
+            return  response()->json(['error' => $validator->errors(), 'status' => 401]);
+        }
+        $newuser=new User;
+        $newuser->createUser($request);
+        $newuser->notify(new confirmacaoCadastro($newuser));
 
-        //return response()->json([$newuser]);
         $success['token']=$newuser->createToken('MyApp')->accessToken;
-        //$success['name']=$newuser->name;
         return response()->json(['success'=>$success, 'status' => 200, 'user'=>$newuser]);
-
       }
 
       public function registerRepublic(Request $request){

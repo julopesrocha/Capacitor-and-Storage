@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  // A URL da API
   apiUrl: string = "http://localhost:8000/api/";
 
   token: string = localStorage.getItem('token');
