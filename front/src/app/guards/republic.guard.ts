@@ -13,15 +13,11 @@ export class RepublicGuard implements CanActivate  {
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
 
-    this.authService.auth().subscribe( (res) => {
-      console.log(res.status);
-      console.log(res.user);
-      if (res.status !== 200) {
+      if (localStorage.getItem('token') === 'null') {
         this.router.navigate(['/login']);
         return false;
+      } else {
+        return true;
       }
-    });
-
-    return true;
   }
 }
