@@ -2,7 +2,9 @@
   <ion-toolbar>
     <div class="toolbar">
       <div id="logo" *ngIf="!auth">
-        <img [routerLink]="['../home']" src="../../assets/icon/icon.png">
+        <div class="img-logo">
+          <img [routerLink]="['../home']" src="../../assets/icon/icon.png">
+        </div>
       </div>
       <div id="logo" *ngIf="auth">
         <ion-buttons slot="start">

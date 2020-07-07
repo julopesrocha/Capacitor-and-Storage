@@ -24,16 +24,20 @@ ion-searchbar{
 
 #logo {
   display: flex;
-  align-items: flex-end;
-  width: 80px;
+  width: auto;
   height: 50px;
+  padding: 0 8px;
+
+}
+
+#logo .img-logo{
+  display: flex;
+  justify-content: flex-end;
 }
 
 #logo img{
-  width: inherit;
-  height: auto;
-  margin-right: 0;
-  align-self: flex-end !important;
+  width: auto;
+  height: 100%;
 }
 
 .slogan{
