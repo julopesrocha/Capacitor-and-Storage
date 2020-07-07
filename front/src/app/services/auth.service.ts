@@ -27,13 +27,14 @@ export class AuthService {
 
   // Logout de usuário
   logout() {
-    this.httpHeaders.headers.Authorization = 'Bearer ' + this.token;
+    this.httpHeaders.headers.Authorization = 'Bearer ' + localStorage.getItem('token');
     return this.http.post( this.apiUrl + 'logout', this.httpHeaders );
   }
 
   // Autentica o usuário no sistema
   auth(): Observable<any> {
-    this.httpHeaders.headers.Authorization = 'Bearer ' + this.token;
-    return this.http.post(this.apiUrl + 'auth', this.httpHeaders);
+    this.httpHeaders.headers.Authorization = 'Bearer ' + localStorage.getItem('token');
+    console.log(localStorage.getItem('token'));
+    return this.http.post(this.apiUrl + 'getDetails', {}, this.httpHeaders);
   }
 }
